@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Example | Check Valid Credentails</title>
+  </head>
+  <body>
+    Username
+    <input id="uName" />
+    Password
+    <label for="password" />
+    <input id="password" />
+    <button id="" onclick="checklog()">Check</button>
+    <script>
+      var logInfo = [
+        { name: "ashwinijain@gmail.com", password: "a1234" },
+        { name: "kareenkapoor@gmail.com", password: "b1234" },
+        { name: "aishwaryaria@gmail.com", password: "c1234" },
+      ];
+
+      function checklog() {
+        var uName = document.getElementById("uName").value;
+        var password = document.getElementById("password").value;
+
+        let checkValidCredentials = false;
+        logInfo.forEach((user) => {
+          if (user.name === uName && user.password === password) {
+            checkValidCredentials = true;
+            document.write("Valid Credentials");
+          }
+        });
+
+        if (!checkValidCredentials) {
+          document.write("Invalid Credentials");
+        }
+      }
+    </script>
+  </body>
+</html>
