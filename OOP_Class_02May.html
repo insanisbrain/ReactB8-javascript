@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title>Class | OOP Learning</title>
+  <script>
+    class student {
+      constructor(name, age) {
+        this.studentName = name;
+        this.studentAge = age;
+      }
+
+      // PROTOTYPE - method
+      printStudentName() {
+        document.write(`hello my name is ==> ${this.studentName} & my age is ==> ${this.studentAge} .... parageph ....`);
+      }
+    }
+
+    // how to initialize a class
+    let a = new student("ankit", "27");
+    let b = new student("Gorakh", "30");
+    a.printStudentName();
+    b.printStudentName();
+  </script>
+</html>
