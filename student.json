@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Ankit Varia",
+    "age": "27",
+    "city": "Vadodara",
+    "country": [
+      {
+        "name": "India"
+      },
+      {
+        "name": "USA"
+      }
+    ]
+  },
+  {
+    "name": "Gorakh Kharat",
+    "age": "30",
+    "city": "Pune",
+    "country": [
+      {
+        "name": "India"
+      },
+      {
+        "name": "CANADA"
+      }
+    ]
+  }
+]
