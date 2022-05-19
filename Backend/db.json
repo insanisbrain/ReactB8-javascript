@@ -1,3 +1,56 @@
 {
-  "city": [{ "name": "Pune" }, { "name": "Mumbai" }, { "name": "Vadodara" }]
+  "employees": [
+    {
+      "id": 1,
+      "name": "Ankit",
+      "Salary": 12000,
+      "designation": "Developer"
+    },
+    {
+      "id": 2,
+      "name": "Gorakh",
+      "Salary": 12000,
+      "designation": "Developer"
+    }
+  ],
+  "city": [
+    {
+      "id": 1,
+      "name": "Pune"
+    },
+    {
+      "name": "Bombay",
+      "id": 2
+    },
+    {
+      "name": "Bombay",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "name": "Banglore"
+    }
+  ],
+  "state": [
+    {
+      "id": 1,
+      "name": "Maharashtra"
+    },
+    {
+      "id": 2,
+      "name": "Gujarat"
+    },
+    {
+      "id": 3,
+      "name": "MP"
+    },
+    {
+      "id": 4,
+      "name": "Karnataka"
+    }
+  ],
+  "country": {
+    "id": 1,
+    "name": "India"
+  }
 }
