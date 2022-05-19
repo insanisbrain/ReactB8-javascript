@@ -1,0 +1,9 @@
+1. Go to https://www.npmjs.com/package/json-server
+2. Open your project directory for e.g. 'Backend'
+3. Open your terminal
+4. Hit command "npm init"
+5. do not enter any information just do enter .. enter ... enter
+6. hit command in terminal "npm i json-server"
+7. Create a db.json file with some data
+8. Hit command in terminal "json-server --watch db.json"
+9. Voilla, your project started to watch database...
