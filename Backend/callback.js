@@ -29,11 +29,11 @@
 const personOne = (name, callFrnd) => {
   // console.log("Callback", callBack)
   console.log(`personOne name: => ${name}`);
-  callFrnd();
+  callFrnd("hey callback function");
 }
 
-const personTwo = () => {
-  console.log(`personTwo`)
+const personTwo = (data, asdas) => {
+  console.log(`personTwo ==> ${data}`)
 }
 
 personOne("Ankit", personTwo);
