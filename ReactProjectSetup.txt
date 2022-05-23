@@ -1,0 +1,16 @@
+Setup Steps for React Project.
+
+==> One Time Setup with any system.
+
+1. Download & Install node js (https://nodejs.org/en/download/), install based on your OS & system bits.
+2. After install check your node version on command prompt ( node --version ).
+3. Search on Google "create react project"
+4. Go to this URL: https://reactjs.org/docs/create-a-new-react-app.html
+5.
+
+npx create-react-app my-app
+
+// Explain Command
+npx --> package installer
+create-react-app --> React project create (default setup steps)
+my-app --> React Project's Name
