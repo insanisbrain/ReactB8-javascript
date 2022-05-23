@@ -137,4 +137,9 @@ fetch('https://jsonplaceholder.typicode.com/posts/2', option3)
   .then((response) => response.json())
   .then((json) => console.log(json));
 
+function abc(x) {
+  return (y)
+  return (x + y)
+}
+
 
