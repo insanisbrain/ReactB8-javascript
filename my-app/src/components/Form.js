@@ -8,16 +8,26 @@ const Form = () => {
   }
   const [name, setName] = useState(initialValue)
 
-  // let initialArrayItem = [
-  //   {
-  //     id: 0,
-  //     name: 'Ankit',
-  //     salary: 20000,
-  //     designation: 'Sr. Software Developer'
-  //   }
-  // ]
+  var initialArrayItem = [
+    {
+      fName: "Ankit",
+      lName: "Varia",
+      designations: ["Sr. Software Developer", "Manager", "CEO"]
+    },
+    {
+      fName: "Gorakh",
+      lName: "Kharat",
+      designations: ["Super Sr. Software Developer", "Super Sr. Manager", "Supeer Sr. CEO"]
+    },
+    {
+      fName: "Javascript",
+      lName: "React",
+      designations: ["Extra Super. Software Developer", "Extra Super Manager", "Extra Super CEO"]
+    }
+  ]
 
-  // const [items, setItems] = useState(initialArrayItem);
+
+  const [items, setItems] = useState(initialArrayItem);
 
   // const addItem = () => {
   //   let data = [...items];
@@ -34,15 +44,25 @@ const Form = () => {
   //   setItems(data)
   // }
 
+  const testFunction = () => {
+    items.forEach((item, index) => {
+      return (
+        <div>
+          Hey your name is {item.fName} {item.lName}
+        </div>
+      )
+    })
+  }
+
   return (
     <div>
       {/* Form */}
-      <input type="text" value={name.firstName} onChange={e => setName({ ...name, firstName: e.target.value })} />
-      <input type="text" value={name.lastName} onChange={e => setName({ ...name, lastName: e.target.value })} />
+      {/* <input type="text" value={name.firstName} onChange={e => setName({ ...name, firstName: e.target.value })} />
+      <input type="text" value={name.lastName} onChange={e => setName({ ...name, lastName: e.target.value })} /> */}
       {/* Form */}
 
-      <h2>Your first name is = {name.firstName}</h2>
-      <h2>Your last name is = {name.lastName}</h2>
+      {/* <h2>Your first name is = {name.firstName}</h2>
+      <h2>Your last name is = {name.lastName}</h2> */}
 
       {/* <button onClick={addItem}>Add A Number</button> */}
       {/* <ul>
@@ -50,13 +70,13 @@ const Form = () => {
           <li>{item.value}</li>
         ))}
       </ul> */}
-      {/* {items.map((item, index) => {
+      {items.map((item, index) => {
         return (
           <div>
-            {item.id} . Your Name is: {item.name} & salary is: {item.salary}
+            Hey your name is {item.fName} {item.lName}
           </div>
         )
-      })} */}
+      })}
     </div>
   )
 }
