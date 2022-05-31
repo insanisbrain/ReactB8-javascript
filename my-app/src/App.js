@@ -15,7 +15,7 @@ function App() {
       <Greet />
       <Greet /> */}
       {/* <Counter /> */}
-      <Form />
+      {/* <Form /> */}
     </div>
   );
 }
