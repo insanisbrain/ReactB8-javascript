@@ -8,6 +8,22 @@ const Form = () => {
   }
   const [name, setName] = useState(initialValue)
 
+
+  // const addItem = () => {
+  //   let data = [...items];
+
+  //   let anotherName = {
+  //     id: 1,
+  //     name: 'Gorakh',
+  //     salary: 100000,
+  //     designation: 'CEO'
+  //   }
+  //   data.push(anotherName)
+  //   console.log("data", data);
+  //   // 
+  //   setItems(data)
+  // }
+
   var initialArrayItem = [
     {
       fName: "Ankit",
@@ -29,29 +45,19 @@ const Form = () => {
 
   const [items, setItems] = useState(initialArrayItem);
 
-  // const addItem = () => {
-  //   let data = [...items];
+  const addNewMember = () => {
 
-  //   let anotherName = {
-  //     id: 1,
-  //     name: 'Gorakh',
-  //     salary: 100000,
-  //     designation: 'CEO'
-  //   }
-  //   data.push(anotherName)
-  //   console.log("data", data);
-  //   // 
-  //   setItems(data)
-  // }
+    let newItems = [...items];
+    let newMember = {
+      fName: "Youtube",
+      lName: "Google",
+      designations: ["Software"]
+    }
+    newItems.push(newMember);
 
-  const testFunction = () => {
-    items.forEach((item, index) => {
-      return (
-        <div>
-          Hey your name is {item.fName} {item.lName}
-        </div>
-      )
-    })
+
+    // Setting new items in your useState
+    setItems([...newItems]);
   }
 
   return (
@@ -70,13 +76,12 @@ const Form = () => {
           <li>{item.value}</li>
         ))}
       </ul> */}
-      {items.map((item, index) => {
+      {items.map((item) => {
         return (
-          <div>
-            Hey your name is {item.fName} {item.lName}
-          </div>
+          <div>Hey your name is {item.fName} {item.lName}</div>
         )
       })}
+      <button onClick={addNewMember}>Add New Memmber</button>
     </div>
   )
 }
