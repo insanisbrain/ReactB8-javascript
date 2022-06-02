@@ -21,15 +21,20 @@ const DataFetch = () => {
       .catch(error => {
         console.log("ERROR ==>", error);
       })
+
+    // axios.post(`URL`, options).then().catch()
+    // axios.put(`URL`, options).then().catch()
+    // axios.patch(`URL`, options).then().catch()
+    // axios.delete(`URL`, options).then().catch()
   }, [id])
 
   return (
     <div>
-      {/* <ul>
+      <ul>
         {
-          posts.map(post => <li>{post.title}</li>)
+          posts.map((post, index) => <li>{post.title}</li>)
         }
-      </ul> */}
+      </ul>
       <input type="text" value={id} onChange={e => setId(e.target.value)} /><br></br>
       {post && post.title}
     </div>
