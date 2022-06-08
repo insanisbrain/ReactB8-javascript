@@ -8,6 +8,8 @@ import Navbar from './components/RoutingComponents/Navbar';
 import Order from './components/RoutingComponents/Order';
 import ComponentC from './components/useContext/ComponentC';
 import React from 'react';
+import CounterOne from './components/useReducer/CounterOne';
+import CounterTwo from './components/useReducer/CounterTwo';
 
 export const UserContext = React.createContext();
 export const ChannelContext = React.createContext();
@@ -20,14 +22,10 @@ let bigObject = {
 
 function App() {
   return (
-    <>
-      <UserContext.Provider value={"ankit"}>
-        <ChannelContext.Provider value="Javascript">
-          Hey I'm App JS!!
-          <ComponentC />
-        </ChannelContext.Provider>
-      </UserContext.Provider>
-    </>
+    <div className="App">
+      {/* <CounterOne /> */}
+      <CounterTwo />
+    </div>
   );
 }
 
