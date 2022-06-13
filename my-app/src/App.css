@@ -37,7 +37,7 @@
   }
 }
 
-.loader {
+/* .loader {
   position: relative;
   display: grid;
   place-items: center;
@@ -64,4 +64,4 @@ span:nth-child(2) {
     width: 100%;
     height: 100%;
   }
-}
+} */

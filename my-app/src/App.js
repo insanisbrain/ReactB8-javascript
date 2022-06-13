@@ -2,11 +2,12 @@ import './App.css';
 import React from 'react';
 import DataFetching from './components/useReducer/DataFetching';
 import FocusInput from './components/useRef/FocusInput';
+import Counter from './components/useMemo/Counter';
 
 function App() {
   return (
     <div className="App">
-      <FocusInput />
+      <Counter />
     </div>
   );
 }
