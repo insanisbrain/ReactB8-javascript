@@ -52,5 +52,101 @@
   "country": {
     "id": 1,
     "name": "India"
+  },
+  "restaurant": {
+    "menuItems": [
+      {
+        "category": "burger",
+        "products": [
+          {
+            "id": 1,
+            "title": "Cheeze Burger",
+            "description": "Hey I'm Cheeze Burger",
+            "image": "/images/pizza.png"
+          },
+          {
+            "id": 2,
+            "title": "Paneer Burger",
+            "description": "Hey I'm Paneer Burger",
+            "image": "/images/pizza.png"
+          },
+          {
+            "id": 3,
+            "title": "Normal Burger",
+            "description": "Hey I'm Normal Burger",
+            "image": "/images/pizza.png"
+          }
+        ]
+      },
+      {
+        "category": "pizza",
+        "products": [
+          {
+            "id": 1,
+            "title": "Cheeze Pizza",
+            "description": "Hey I'm Cheeze Pizza",
+            "image": "/images/pizza.png"
+          },
+          {
+            "id": 2,
+            "title": "Paneer Pizza",
+            "description": "Hey I'm Paneer Pizza",
+            "image": "/images/pizza.png"
+          },
+          {
+            "id": 3,
+            "title": "Normal Pizza",
+            "description": "Hey I'm Normal Pizza",
+            "image": "/images/pizza.png"
+          }
+        ]
+      },
+      {
+        "category": "pasta",
+        "products": [
+          {
+            "id": 1,
+            "title": "Cheeze Pasta",
+            "description": "Hey I'm Cheeze Pasta",
+            "image": "/images/pizza.png"
+          },
+          {
+            "id": 2,
+            "title": "Paneer Pasta",
+            "description": "Hey I'm Paneer Pasta",
+            "image": "/images/pizza.png"
+          },
+          {
+            "id": 3,
+            "title": "Normal Pasta",
+            "description": "Hey I'm Normal Pasta",
+            "image": "/images/pizza.png"
+          }
+        ]
+      },
+      {
+        "category": "pavbhaji",
+        "products": [
+          {
+            "id": 1,
+            "title": "Cheeze Pavbhaji",
+            "description": "Hey I'm Cheeze Pavbhaji",
+            "image": "/images/pizza.png"
+          },
+          {
+            "id": 2,
+            "title": "Paneer Pavbhaji",
+            "description": "Hey I'm Paneer Pavbhaji",
+            "image": "/images/pizza.png"
+          },
+          {
+            "id": 3,
+            "title": "Normal Pavbhaji",
+            "description": "Hey I'm Normal Pavbhaji",
+            "image": "/images/pizza.png"
+          }
+        ]
+      }
+    ]
   }
 }
