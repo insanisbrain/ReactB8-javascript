@@ -1,0 +1,193 @@
+{
+  "Header": [
+    {
+      "title": "Home",
+      "path": "'/'",
+      "dropdown": "'no'",
+      "data": [
+        {
+          "name": "",
+          "path": ""
+        }
+      ]
+    },
+    {
+      "title": "Shop",
+      "path": "'/'",
+      "dropdown": "'no'",
+      "data": [
+        {
+          "name": "",
+          "path": ""
+        }
+      ]
+    },
+    {
+      "title": "Featured",
+      "path": "'/'",
+      "dropdown": "'no'",
+      "data": [
+        {
+          "name": "",
+          "path": ""
+        }
+      ]
+    },
+    {
+      "title": "Recommended",
+      "path": "'/'",
+      "dropdown": "'no'",
+      "data": [
+        {
+          "name": "",
+          "path": ""
+        }
+      ]
+    },
+    {
+      "title": "Category",
+      "path": "'/'",
+      "dropdown": "'no'",
+      "data": [
+        {
+          "name": "",
+          "path": ""
+        }
+      ]
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "women"
+    },
+    {
+      "id": 2,
+      "name": "men"
+    },
+    {
+      "id": 3,
+      "name": "couple"
+    }
+  ],
+  "size": [
+    {
+      "id": 1,
+      "name": "32mm"
+    },
+    {
+      "id": 2,
+      "name": "42mm"
+    },
+    {
+      "id": 3,
+      "name": "46mm"
+    }
+  ],
+  "color": [
+    {
+      "id": 1,
+      "name": "red"
+    },
+    {
+      "id": 2,
+      "name": "blue"
+    },
+    {
+      "id": 3,
+      "name": "black"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "Anne Klein-1",
+      "image": "../images/annewomen/anne-1.jpg",
+      "color": "White",
+      "price": "7,000/-",
+      "category_id": 1,
+      "color_id": 2,
+      "size_id": 1
+    },
+    {
+      "id": 2,
+      "title": "Anne Klein-2",
+      "image": "../images/annewomen/anne-2.jpg",
+      "color": "Black",
+      "price": "3,000/-",
+      "category_id": 1,
+      "color_id": 2,
+      "size_id": 1
+    },
+    {
+      "id": 3,
+      "title": "Anne Klein-3",
+      "image": "../images/annewomen/anne-7.jpg",
+      "color": "Pink",
+      "price": "4,000/-",
+      "category_id": 1,
+      "color_id": 2,
+      "size_id": 1
+    },
+    {
+      "id": 4,
+      "title": "Anne Klein-6",
+      "image": "../images/boat/Boat1.webp",
+      "color": "Black",
+      "price": "5,000/-",
+      "category_id": 2,
+      "color_id": 2,
+      "size_id": 1
+    },
+    {
+      "id": 5,
+      "title": "Anne Klein-7",
+      "image": "../images/boat/Boat2.webp",
+      "color": "Black",
+      "price": "3,000/-",
+      "category_id": 2,
+      "color_id": 2,
+      "size_id": 1
+    },
+    {
+      "id": 6,
+      "title": "Anne Klein-8",
+      "image": "../images/boat/Boat5.webp",
+      "color": "Brown",
+      "price": "12,000/-",
+      "category_id": 1,
+      "color_id": 2,
+      "size_id": 1
+    },
+    {
+      "id": 7,
+      "title": "Anne Klein-11",
+      "image": "../images/couple/couple-1.webp",
+      "color": "silver",
+      "price": "15,000/-",
+      "category_id": 3,
+      "color_id": 2,
+      "size_id": 1
+    },
+    {
+      "id": 8,
+      "title": "Anne Klein-12",
+      "image": "../images/couple/couple-2.webp",
+      "color": "Black",
+      "price": "20,000/-",
+      "category_id": 3,
+      "color_id": 2,
+      "size_id": 1
+    },
+    {
+      "id": 9,
+      "title": "Anne Klein-13",
+      "image": "../images/couple/couple-3.webp",
+      "color": "Golden",
+      "price": "22,000/-",
+      "category_id": 3,
+      "color_id": 2,
+      "size_id": 1
+    }
+  ]
+}

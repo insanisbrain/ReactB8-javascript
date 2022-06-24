@@ -6,11 +6,13 @@ import Home from './components/RoutingComponents/Home';
 import About from './components/RoutingComponents/About';
 import Company from './components/RoutingComponents/Company';
 import User from './components/RoutingComponents/User';
+import DataFilter from './components/DataFilterOfProduct/DataFilter';
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <DataFilter />
+      {/* <Navbar />
 
       <Routes>
         <Route path="home" element={<Home />}></Route>
@@ -18,7 +20,7 @@ function App() {
           <Route path="company" element={<Company />}></Route>
           <Route path="user" element={<User />}></Route>
         </Route>
-      </Routes>
+      </Routes> */}
     </div>
 
   );
