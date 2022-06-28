@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
+import Cart from './Utility/Cart';
 
 const Menu = () => {
 
@@ -19,13 +20,7 @@ const Menu = () => {
   const filterCategory = (menuData, category) => {
     let filterdCategoryMenuItems = menuData?.data?.menuItems?.filter((data) => data.category === category);
     setMenu(filterdCategoryMenuItems);
-    // return filterdCategoryMenuItems;
   }
-
-  // const changeCategory = (category) => {
-  //   let filterdCategoryData = filterCategory(allMenuData, category);
-  //   setMenu(filterdCategoryData);
-  // }
 
   return (
     <div className="container">
@@ -46,6 +41,7 @@ const Menu = () => {
                     <h5 className="card-title">{menuItems.title}</h5>
                     <p className="card-text">{menuItems.description}</p>
                   </div>
+                  <Cart product={menuItems} />
                 </div>
               </div>
             )

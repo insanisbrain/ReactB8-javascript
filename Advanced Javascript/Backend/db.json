@@ -148,5 +148,43 @@
         ]
       }
     ]
-  }
+  },
+  "cart": [
+    {
+      "id": 1,
+      "title": "Cheeze Pavbhaji",
+      "description": "Hey I'm Cheeze Pavbhaji",
+      "image": "/images/pizza.png"
+    },
+    {
+      "title": "Normal Pasta",
+      "description": "Hey I'm Normal Pasta",
+      "image": "/images/pizza.png",
+      "id": 2
+    },
+    {
+      "title": "Paneer Pavbhaji",
+      "description": "Hey I'm Paneer Pavbhaji",
+      "image": "/images/pizza.png",
+      "id": 3
+    },
+    {
+      "title": "Normal Pizza",
+      "description": "Hey I'm Normal Pizza",
+      "image": "/images/pizza.png",
+      "id": 4
+    },
+    {
+      "title": "Paneer Burger",
+      "description": "Hey I'm Paneer Burger",
+      "image": "/images/pizza.png",
+      "id": 5
+    },
+    {
+      "title": "Paneer Pavbhaji",
+      "description": "Hey I'm Paneer Pavbhaji",
+      "image": "/images/pizza.png",
+      "id": 6
+    }
+  ]
 }
