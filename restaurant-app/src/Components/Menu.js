@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios';
 import Cart from './Utility/Cart';
+import { selectRestaurants } from '../Redux/Slice/RestaurantSlice';
+import { useSelector } from 'react-redux';
 
 const Menu = () => {
 
@@ -8,17 +9,18 @@ const Menu = () => {
   const [allMenuData, setAllMenuData] = useState([])
   const [category, setCategory] = useState("pasta");
 
+  const allMenusData = useSelector(selectRestaurants)
+
   useEffect(() => {
-    axios.get(`http://localhost:8000/restaurant`)
-      .then((response) => {
-        setAllMenuData(response);
-        filterCategory(response, category);
-      })
-      .catch((error) => console.log(error))
-  }, [])
+    if (allMenusData?.menuItems?.length) {
+      console.log("allMenusData", allMenusData)
+      setAllMenuData(allMenusData);
+      filterCategory(allMenusData, category);
+    }
+  }, [allMenusData])
 
   const filterCategory = (menuData, category) => {
-    let filterdCategoryMenuItems = menuData?.data?.menuItems?.filter((data) => data.category === category);
+    let filterdCategoryMenuItems = menuData?.menuItems?.filter((data) => data.category === category);
     setMenu(filterdCategoryMenuItems);
   }
 
