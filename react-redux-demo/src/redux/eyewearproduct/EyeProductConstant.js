@@ -1,0 +1,2 @@
+export const BUY_EYE_PRODUCT = 'BUY_EYE_PRODUCT';
+export const ADD_EYE_PRODUCT = 'ADD_EYE_PRODUCT';
