@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { addGlassProduct, buyGlassProduct } from './../redux/glassproduct/GlassProductAction'
+import { ADD_GLASS_PRODUCT, BUY_GLASS_PRODUCT } from '../redux/glassproduct/GlassProductSlice';
 
 const GlassProduct = () => {
 
@@ -10,8 +10,8 @@ const GlassProduct = () => {
   return (
     <div>
       <h2>Total Glass Products - {numOfProducts} </h2>
-      <button onClick={() => dispatch(buyGlassProduct())}>Buy Glass Product</button>
-      <button onClick={() => dispatch(addGlassProduct())}>Add Glass Product</button>
+      <button onClick={() => dispatch(BUY_GLASS_PRODUCT())}>Buy Glass Product</button>
+      <button onClick={() => dispatch(ADD_GLASS_PRODUCT())}>Add Glass Product</button>
     </div>
   )
 }
