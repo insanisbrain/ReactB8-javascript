@@ -11,6 +11,19 @@ const Home = () => {
   const [id, setId] = useState(1);
 
   useEffect(() => {
+    console.log("mouting");
+
+    return () => {
+      console.log("unmouting");
+    }
+  }, [])
+
+  useEffect(() => {
+    console.log("update")
+  })
+
+  useEffect(() => {
+    console.log(',asdasdasd')
     axios.get(`https://jsonplaceholder.typicode.com/posts`)
       .then(response => {
         console.log("RESPONSE ==>", response);
@@ -26,6 +39,8 @@ const Home = () => {
     // axios.patch(`URL`, options).then().catch()
     // axios.delete(`URL`, options).then().catch()
   }, [id])
+
+
 
   return (
     <div>
