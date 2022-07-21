@@ -1,0 +1,17 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "firstName": "Ankit",
+      "lastName": "Varia",
+      "age": 27,
+      "education": "Master IT",
+      "designation": "Sr. Software Developer",
+      "email": "ankit.varia@gmail.com",
+      "password": "ankit@123",
+      "mobile": "8780105205",
+      "gender": "male",
+      "hobbies": ["Coding", "Movies"]
+    }
+  ]
+}
