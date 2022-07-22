@@ -11,7 +11,67 @@
       "password": "ankit@123",
       "mobile": "8780105205",
       "gender": "male",
-      "hobbies": ["Coding", "Movies"]
+      "hobbies": [
+        "Coding",
+        "Movies"
+      ]
+    },
+    {
+      "firstName": "Gorakh",
+      "lastName": "Kharat",
+      "age": "30",
+      "education": "masters",
+      "designation": "CEO",
+      "email": "gk@gmail.com",
+      "password": "gorakh@123",
+      "mobile": "8780105205",
+      "gender": "male",
+      "hobbies": [
+        "gaming",
+        "coding",
+        "travelling",
+        "movies"
+      ],
+      "id": 2
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "age": "",
+      "education": "",
+      "designation": "",
+      "email": "",
+      "password": "",
+      "mobile": "",
+      "gender": "",
+      "hobbies": [],
+      "id": 3
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "age": "",
+      "education": "",
+      "designation": "",
+      "email": "absjkdfbakjsbdkjasjdbkajsbdjkasd",
+      "password": "",
+      "mobile": "ghjg",
+      "gender": "",
+      "hobbies": [],
+      "id": 4
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "age": "",
+      "education": "",
+      "designation": "",
+      "email": "ksvduygfyusbvd",
+      "password": "",
+      "mobile": "gtyj",
+      "gender": "",
+      "hobbies": [],
+      "id": 5
     }
   ]
 }

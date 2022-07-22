@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 
 const initialState = {
   firstName: '',
@@ -20,7 +21,11 @@ const CreateUser = () => {
 
   // All your function goes here...
   const createUser = () => {
-    console.log("Form State", formState);
+
+    axios.post('http://localhost:8000/user', formState)
+      .then((response) => console.log(response))
+      .catch((error) => console.log(error))
+
   }
 
   const formValueChange = (event, fieldType) => {
@@ -57,6 +62,49 @@ const CreateUser = () => {
         break;
       case "DESIGNATION":
         newState.designation = event.target.value
+        break;
+      case "GENDER":
+        newState.gender = event.target.value;
+        break;
+      case "MOVIES":
+        if (event.target.checked) {
+          newState.hobbies.push("movies");
+        } else {
+          let indexOfMovie = newState.hobbies.indexOf("movies");
+          if (indexOfMovie > -1) {
+            newState.hobbies.splice(indexOfMovie, 1);
+          }
+        }
+        break;
+      case "GAMING":
+        if (event.target.checked) {
+          newState.hobbies.push("gaming");
+        } else {
+          let indexOfGaming = newState.hobbies.indexOf("gaming");
+          if (indexOfGaming > -1) {
+            newState.hobbies.splice(indexOfGaming, 1);
+          }
+        }
+        break;
+      case "CODING":
+        if (event.target.checked) {
+          newState.hobbies.push("coding");
+        } else {
+          let indexOfCoding = newState.hobbies.indexOf("coding");
+          if (indexOfCoding > -1) {
+            newState.hobbies.splice(indexOfCoding, 1);
+          }
+        }
+        break;
+      case "TRAVELLING":
+        if (event.target.checked) {
+          newState.hobbies.push("travelling");
+        } else {
+          let indexOfTravelling = newState.hobbies.indexOf("travelling");
+          if (indexOfTravelling > -1) {
+            newState.hobbies.splice(indexOfTravelling, 1);
+          }
+        }
         break;
       default:
         break;
@@ -124,13 +172,13 @@ const CreateUser = () => {
           <legend className="col-form-label col-sm-2 pt-0">Gender</legend>
           <div className="col-sm-10">
             <div className="form-check">
-              <input className="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" />
+              <input className="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="male" onChange={(event) => formValueChange(event, "GENDER")} />
               <label className="form-check-label" htmlFor="gridRadios1">
                 Male
               </label>
             </div>
             <div className="form-check">
-              <input className="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2" />
+              <input className="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="female" onChange={(event) => formValueChange(event, "GENDER")} />
               <label className="form-check-label" htmlFor="gridRadios2">
                 Female
               </label>
@@ -142,26 +190,26 @@ const CreateUser = () => {
         <div className="col-sm-2">Hobbies</div>
         <div className="col-sm-10">
           <div className="form-check">
-            <input className="form-check-input" type="checkbox" id="gridCheck1" />
-            <label className="form-check-label" htmlFor="gridCheck1">
+            <input className="form-check-input" type="checkbox" value="movies" onChange={(event) => formValueChange(event, "MOVIES")} />
+            <label className="form-check-label" >
               Movies
             </label>
           </div>
           <div className="form-check">
-            <input className="form-check-input" type="checkbox" id="gridCheck1" />
-            <label className="form-check-label" htmlFor="gridCheck1">
+            <input className="form-check-input" type="checkbox" value="gaming" onChange={(event) => formValueChange(event, "GAMING")} />
+            <label className="form-check-label" >
               Gaming
             </label>
           </div>
           <div className="form-check">
-            <input className="form-check-input" type="checkbox" id="gridCheck1" />
-            <label className="form-check-label" htmlFor="gridCheck1">
+            <input className="form-check-input" type="checkbox" value="coding" onChange={(event) => formValueChange(event, "CODING")} />
+            <label className="form-check-label" >
               Coding
             </label>
           </div>
           <div className="form-check">
-            <input className="form-check-input" type="checkbox" id="gridCheck1" />
-            <label className="form-check-label" htmlFor="gridCheck1">
+            <input className="form-check-input" type="checkbox" value="travelling" onChange={(event) => formValueChange(event, "TRAVELLING")} />
+            <label className="form-check-label" >
               Travelling
             </label>
           </div>
