@@ -35,43 +35,90 @@
       "id": 2
     },
     {
-      "firstName": "",
-      "lastName": "",
-      "age": "",
-      "education": "",
+      "firstName": "Darshan",
+      "lastName": "Gaikwad",
+      "age": "22",
+      "education": "BE ELE",
       "designation": "",
-      "email": "",
-      "password": "",
-      "mobile": "",
-      "gender": "",
-      "hobbies": [],
+      "email": "darshan@gmail.com",
+      "password": "darshan@123",
+      "mobile": "1234567890",
+      "gender": "male",
+      "hobbies": [
+        "movies",
+        "gaming",
+        "coding",
+        "travelling"
+      ],
       "id": 3
     },
     {
-      "firstName": "",
-      "lastName": "",
-      "age": "",
-      "education": "",
-      "designation": "",
-      "email": "absjkdfbakjsbdkjasjdbkajsbdjkasd",
-      "password": "",
-      "mobile": "ghjg",
-      "gender": "",
-      "hobbies": [],
+      "firstName": "John",
+      "lastName": "Doe",
+      "age": "25",
+      "education": "Phd",
+      "designation": "Manager",
+      "email": "johndoe@gmail.com",
+      "password": "john@123",
+      "mobile": "1234567890",
+      "gender": "male",
+      "hobbies": [
+        "movies",
+        "gaming",
+        "coding",
+        "travelling"
+      ],
       "id": 4
     },
     {
-      "firstName": "",
-      "lastName": "",
-      "age": "",
-      "education": "",
+      "firstName": "Ketty",
+      "lastName": "Parry",
+      "age": "35",
+      "education": "Master",
       "designation": "",
-      "email": "ksvduygfyusbvd",
-      "password": "",
-      "mobile": "gtyj",
-      "gender": "",
-      "hobbies": [],
+      "email": "kettyparry@gmail.com",
+      "password": "ketty@123",
+      "mobile": "1234567890",
+      "gender": "female",
+      "hobbies": [
+        "gaming",
+        "coding"
+      ],
       "id": 5
+    },
+    {
+      "firstName": "Hero",
+      "lastName": "User",
+      "age": "25",
+      "education": "Hero Education",
+      "designation": "CEO",
+      "email": "hero@gmail.com",
+      "password": "hero@123",
+      "mobile": "1234567890",
+      "gender": "male",
+      "hobbies": [
+        "movies",
+        "gaming",
+        "coding",
+        "travelling"
+      ],
+      "id": 6
+    },
+    {
+      "firstName": "Fake",
+      "lastName": "User",
+      "age": "30",
+      "education": "fakeeducation",
+      "designation": "CEO",
+      "email": "fake@gmail.com",
+      "password": "fake@123",
+      "mobile": "1234567890",
+      "gender": "male",
+      "hobbies": [
+        "movies",
+        "gaming"
+      ],
+      "id": 7
     }
   ]
 }

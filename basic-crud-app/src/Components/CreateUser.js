@@ -23,7 +23,9 @@ const CreateUser = () => {
   const createUser = () => {
 
     axios.post('http://localhost:8000/user', formState)
-      .then((response) => console.log(response))
+      .then((response) => {
+        setFormState(initialState);
+      })
       .catch((error) => console.log(error))
 
   }
@@ -114,34 +116,35 @@ const CreateUser = () => {
 
   return (
     <div>
+      <h3>Create Users</h3>
       <div className="form-group row my-2">
         <label className="col-sm-2 col-form-label">First Name</label>
         <div className="col-sm-10">
-          <input type="text" className="form-control" onChange={(event) => formValueChange(event, "FIRST_NAME")} />
+          <input type="text" className="form-control" value={formState.firstName} onChange={(event) => formValueChange(event, "FIRST_NAME")} />
         </div>
       </div>
       <div className="form-group row my-2">
         <label className="col-sm-2 col-form-label">Last Name</label>
         <div className="col-sm-10">
-          <input type="text" className="form-control" onChange={(event) => formValueChange(event, "LAST_NAME")} />
+          <input type="text" className="form-control" value={formState.lastName} onChange={(event) => formValueChange(event, "LAST_NAME")} />
         </div>
       </div>
       <div className="form-group row my-2">
         <label className="col-sm-2 col-form-label">Age</label>
         <div className="col-sm-10">
-          <input type="number" className="form-control" onChange={(event) => formValueChange(event, "AGE")} />
+          <input type="number" className="form-control" value={formState.age} onChange={(event) => formValueChange(event, "AGE")} />
         </div>
       </div>
       <div className="form-group row my-2">
         <label className="col-sm-2 col-form-label">Education</label>
         <div className="col-sm-10">
-          <input type="text" className="form-control" onChange={(event) => formValueChange(event, "EDUCATION")} />
+          <input type="text" className="form-control" value={formState.education} onChange={(event) => formValueChange(event, "EDUCATION")} />
         </div>
       </div>
       <div className="form-group row my-2">
         <label className="col-sm-2 col-form-label">Designation</label>
         <div className="col-sm-10">
-          <select className="form-control" onChange={(event) => formValueChange(event, "DESIGNATION")}>
+          <select className="form-control" value={formState.designation} onChange={(event) => formValueChange(event, "DESIGNATION")}>
             <option>Software Developer</option>
             <option>QA Enginner</option>
             <option>Manager</option>
@@ -152,19 +155,19 @@ const CreateUser = () => {
       <div className="form-group row my-2">
         <label className="col-sm-2 col-form-label">Email</label>
         <div className="col-sm-10">
-          <input type="email" className="form-control" onChange={(event) => formValueChange(event, "EMAIL")} />
+          <input type="email" className="form-control" value={formState.email} onChange={(event) => formValueChange(event, "EMAIL")} />
         </div>
       </div>
       <div className="form-group row my-2">
         <label className="col-sm-2 col-form-label">Password</label>
         <div className="col-sm-10">
-          <input type="password" className="form-control" onChange={(event) => formValueChange(event, "PASSWORD")} />
+          <input type="password" className="form-control" value={formState.password} onChange={(event) => formValueChange(event, "PASSWORD")} />
         </div>
       </div>
       <div className="form-group row my-2">
         <label className="col-sm-2 col-form-label">Mobile No</label>
         <div className="col-sm-10">
-          <input type="text" className="form-control" onChange={(event) => formValueChange(event, "MOBILE_NO")} />
+          <input type="text" className="form-control" value={formState.mobile} onChange={(event) => formValueChange(event, "MOBILE_NO")} />
         </div>
       </div>
       <fieldset className="form-group">

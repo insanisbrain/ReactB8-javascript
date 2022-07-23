@@ -1,6 +1,9 @@
 // import './App.css';
 
 import CreateUser from "./Components/CreateUser";
+import UserList from "./Components/UserList";
+import { Routes, Route, NavLink } from "react-router-dom";
+import NavMenu from "./Components/NavMenu";
 
 /**
  * 
@@ -22,17 +25,31 @@ import CreateUser from "./Components/CreateUser";
 function App() {
   return (
     <div className="App">
+
+
+
+
       <div className="container">
-        <div className="row">
+        <NavMenu />
+        <Routes>
+          <Route path="/" element={<UserList />} />
+          <Route path="/createuser" element={<CreateUser />} />
+        </Routes>
+        {/* <div className="row">
           <div className="col-12">
             <h3>CRUD APPLICATION</h3>
           </div>
         </div>
         <div className="row">
           <div className="col-12">
-            <CreateUser />
+            <UserList />
           </div>
         </div>
+        <div className="row">
+          <div className="col-12">
+            <CreateUser />
+          </div>
+        </div> */}
       </div>
     </div>
   );
