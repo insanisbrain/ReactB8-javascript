@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUsers } from '../Redux/User/userSlice';
@@ -24,6 +25,13 @@ const UserList = () => {
     dispatch(fetchUsers())
   }
 
+  const userDelete = async (data) => {
+    let response = await axios.delete(`http://localhost:8000/user/${data.id}`);
+    if (response) {
+      loadUserData();
+    }
+  }
+
   return (
     <div>
       <h3>Users List</h3>
@@ -39,6 +47,7 @@ const UserList = () => {
             <th scope="col">Education</th>
             <th scope="col">Designation</th>
             <th scope="col">Hobbies</th>
+            <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -55,6 +64,10 @@ const UserList = () => {
                   <td>{user.education}</td>
                   <td>{user.designation}</td>
                   <td>{user.hobbies.toString()}</td>
+                  <td width="170">
+                    <button type="button" className="btn btn-primary me-2">Edit</button>
+                    <button type="button" className="btn btn-danger" onClick={() => userDelete(user)}>Delete</button>
+                  </td>
                 </tr>
               )
             })
