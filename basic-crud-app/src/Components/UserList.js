@@ -1,24 +1,32 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchUsers } from '../Redux/User/userSlice';
+
 
 const UserList = () => {
 
   const [data, setData] = useState([]);
 
+  const dispatch = useDispatch();
+  const userData = useSelector(state => state.users.data)
+
   useEffect(() => {
     loadUserData()
   }, [])
 
+  useEffect(() => {
+    if (userData.length) {
+      setData(userData);
+    }
+  }, [userData])
+
   const loadUserData = () => {
-    axios.get('http://localhost:8000/user')
-      .then((response) => setData(response.data))
-      .catch((error) => console.error("error", error))
+    dispatch(fetchUsers())
   }
 
   return (
     <div>
       <h3>Users List</h3>
-      {console.log("data", data)}
       <table className="table table-bordered">
         <thead>
           <tr>
