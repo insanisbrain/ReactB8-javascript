@@ -12,6 +12,80 @@
       "gender": "male",
       "hobbies": [],
       "id": 1
+    },
+    {
+      "firstName": "Ankit",
+      "lastName": "Varia",
+      "age": "20",
+      "education": "Master",
+      "designation": "CEO",
+      "email": "ankit@gmai.com",
+      "password": "Ankit@1234",
+      "mobile": "8780105205",
+      "gender": "male",
+      "hobbies": [],
+      "id": 2
+    },
+    {
+      "firstName": "Ankit",
+      "lastName": "Varia",
+      "age": "20",
+      "education": "Master",
+      "designation": "CEO",
+      "email": "ankit@gmai.com",
+      "password": "Ankit@1234",
+      "mobile": "8780105205",
+      "gender": "male",
+      "hobbies": [
+        "coding"
+      ],
+      "id": 3
+    },
+    {
+      "firstName": "Ankit",
+      "lastName": "Varia",
+      "age": "20",
+      "education": "Master",
+      "designation": "CEO",
+      "email": "ankit@gmai.com",
+      "password": "Ankit@1234",
+      "mobile": "8780105205",
+      "gender": "male",
+      "hobbies": [
+        "movies"
+      ],
+      "id": 4
+    },
+    {
+      "firstName": "Ankit",
+      "lastName": "Varia",
+      "age": "20",
+      "education": "Master",
+      "designation": "CEO",
+      "email": "ankit@gmai.com",
+      "password": "Ankit@1234",
+      "mobile": "8780105205",
+      "gender": "male",
+      "hobbies": [
+        "gaming"
+      ],
+      "id": 5
+    },
+    {
+      "firstName": "asd",
+      "lastName": "asd",
+      "age": "34",
+      "education": "asd",
+      "designation": "Software Developer",
+      "email": "as@as.c",
+      "password": "Ankit@1234",
+      "mobile": "8780105205",
+      "gender": "female",
+      "hobbies": [
+        "gaming",
+        "coding"
+      ],
+      "id": 6
     }
   ]
 }

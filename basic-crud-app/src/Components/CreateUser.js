@@ -19,15 +19,80 @@ const CreateUser = () => {
   // Put your all use state here. 
   const [formState, setFormState] = useState(initialState);
 
+  function isValidEmail(email) {
+    return /\S+@\S+\.\S+/.test(email);
+  }
+
+  function isValidPassword(password) {
+    return /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/.test(password)
+  }
+
+  function isValidMobileNo(mobileNo) {
+    return /^[0-9]{10}$/.test(mobileNo)
+  }
+
+  const validateForm = () => {
+
+    console.log("formState", formState);
+
+    if (formState.firstName === "") {
+      return false;
+    }
+
+    if (formState.lastName === "") {
+      return false;
+    }
+
+    if (formState.age === "" || Number(formState.age) <= 17) {
+      return false
+    }
+
+    if (formState.education === "") {
+      return false;
+    }
+
+    if (formState.designation === "") {
+      return false;
+    }
+
+    if (formState.email === "" || !isValidEmail(formState.email)) {
+      return false;
+    }
+
+
+    if (formState.password === '' || !isValidPassword(formState.password)) {
+      return false;
+    }
+
+    if (formState.mobile === '' || !isValidMobileNo(formState.mobile)) {
+      return false
+    }
+
+    if (formState.gender === '') {
+      return false;
+    }
+
+    if (formState.hobbies.length <= 0) {
+      return false;
+    }
+
+
+    // true --> form data valid
+    // false --> form data invalid
+    return true;
+  }
+
   // All your function goes here...
   const createUser = () => {
 
-    axios.post('http://localhost:8000/user', formState)
-      .then((response) => {
-        setFormState(initialState);
-      })
-      .catch((error) => console.log(error))
-
+    console.log("validateForm()", validateForm())
+    if (validateForm()) {
+      axios.post('http://localhost:8000/user', formState)
+        .then((response) => {
+          setFormState(initialState);
+        })
+        .catch((error) => console.log(error))
+    }
   }
 
   const formValueChange = (event, fieldType) => {
@@ -56,6 +121,7 @@ const CreateUser = () => {
         break;
       // password
       case "PASSWORD":
+
         newState.password = event.target.value
         break;
       // text
@@ -118,70 +184,72 @@ const CreateUser = () => {
     <div>
       <h3>Create Users</h3>
       <div className="form-group row my-2">
-        <label className="col-sm-2 col-form-label">First Name</label>
+        <label className="col-sm-2 col-form-label">First Name *</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" value={formState.firstName} onChange={(event) => formValueChange(event, "FIRST_NAME")} />
         </div>
       </div>
       <div className="form-group row my-2">
-        <label className="col-sm-2 col-form-label">Last Name</label>
+        <label className="col-sm-2 col-form-label">Last Name *</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" value={formState.lastName} onChange={(event) => formValueChange(event, "LAST_NAME")} />
         </div>
       </div>
       <div className="form-group row my-2">
-        <label className="col-sm-2 col-form-label">Age</label>
+        <label className="col-sm-2 col-form-label">Age *</label>
         <div className="col-sm-10">
           <input type="number" className="form-control" value={formState.age} onChange={(event) => formValueChange(event, "AGE")} />
         </div>
       </div>
       <div className="form-group row my-2">
-        <label className="col-sm-2 col-form-label">Education</label>
+        <label className="col-sm-2 col-form-label">Education *</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" value={formState.education} onChange={(event) => formValueChange(event, "EDUCATION")} />
         </div>
       </div>
       <div className="form-group row my-2">
-        <label className="col-sm-2 col-form-label">Designation</label>
+        <label className="col-sm-2 col-form-label">Designation *</label>
         <div className="col-sm-10">
           <select className="form-control" value={formState.designation} onChange={(event) => formValueChange(event, "DESIGNATION")}>
-            <option>Software Developer</option>
-            <option>QA Enginner</option>
-            <option>Manager</option>
-            <option>CEO</option>
+            <option value="">Select</option>
+            <option value="Software Developer">Software Developer</option>
+            <option value="QA Engineer">QA Enginner</option>
+            <option value="Manager">Manager</option>
+            <option value="CEO">CEO</option>
           </select>
         </div>
       </div>
       <div className="form-group row my-2">
-        <label className="col-sm-2 col-form-label">Email</label>
+        <label className="col-sm-2 col-form-label">Email *</label>
         <div className="col-sm-10">
           <input type="email" className="form-control" value={formState.email} onChange={(event) => formValueChange(event, "EMAIL")} />
         </div>
       </div>
       <div className="form-group row my-2">
-        <label className="col-sm-2 col-form-label">Password</label>
+        <label className="col-sm-2 col-form-label">Password *</label>
         <div className="col-sm-10">
           <input type="password" className="form-control" value={formState.password} onChange={(event) => formValueChange(event, "PASSWORD")} />
+          <small>Minimum 8 Character, One Lower, One Upper , One special, One Number</small>
         </div>
       </div>
       <div className="form-group row my-2">
-        <label className="col-sm-2 col-form-label">Mobile No</label>
+        <label className="col-sm-2 col-form-label">Mobile No *</label>
         <div className="col-sm-10">
           <input type="text" className="form-control" value={formState.mobile} onChange={(event) => formValueChange(event, "MOBILE_NO")} />
         </div>
       </div>
       <fieldset className="form-group">
         <div className="row">
-          <legend className="col-form-label col-sm-2 pt-0">Gender</legend>
+          <legend className="col-form-label col-sm-2 pt-0">Gender *</legend>
           <div className="col-sm-10">
             <div className="form-check">
-              <input className="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="male" onChange={(event) => formValueChange(event, "GENDER")} />
+              <input className="form-check-input" type="radio" name="gridRadios" id="gridRadios1" checked={formState.gender === 'male'} value="male" onChange={(event) => formValueChange(event, "GENDER")} />
               <label className="form-check-label" htmlFor="gridRadios1">
                 Male
               </label>
             </div>
             <div className="form-check">
-              <input className="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="female" onChange={(event) => formValueChange(event, "GENDER")} />
+              <input className="form-check-input" type="radio" name="gridRadios" id="gridRadios2" checked={formState.gender === 'female'} value="female" onChange={(event) => formValueChange(event, "GENDER")} />
               <label className="form-check-label" htmlFor="gridRadios2">
                 Female
               </label>
@@ -190,7 +258,7 @@ const CreateUser = () => {
         </div>
       </fieldset>
       <div className="form-group row my-2">
-        <div className="col-sm-2">Hobbies</div>
+        <div className="col-sm-2">Hobbies * (atlease one)</div>
         <div className="col-sm-10">
           <div className="form-check">
             <input className="form-check-input" type="checkbox" value="movies" onChange={(event) => formValueChange(event, "MOVIES")} />
@@ -220,7 +288,12 @@ const CreateUser = () => {
       </div>
       <div className="form-group row my-2">
         <div className="col-sm-10">
-          <button type="submit" className="btn btn-primary" onClick={() => createUser()}>Create User</button>
+          <div>
+            <button type="submit" className="btn btn-primary" onClick={() => createUser()}>Create User</button>
+          </div>
+          <div>
+            <small>Please enter mandatory values (*)</small>
+          </div>
         </div>
       </div>
     </div>
