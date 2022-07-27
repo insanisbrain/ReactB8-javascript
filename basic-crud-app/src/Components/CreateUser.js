@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { useNavigate, useParams } from 'react-router-dom';
 
 const initialState = {
   firstName: '',
@@ -18,6 +19,22 @@ const CreateUser = () => {
 
   // Put your all use state here. 
   const [formState, setFormState] = useState(initialState);
+
+  let params = useParams();
+  const navigate = useNavigate();
+  const [editUser, setEditUser] = useState(Object.keys(params).length !== 0 ? true : false)
+
+  useEffect(() => {
+    if (editUser) {
+      axios.get(`http://localhost:8000/user/${params?.id}`)
+        .then((response) => updateUserFormData(response?.data))
+        .catch((error) => console.log(error));
+    }
+  }, [])
+
+  const updateUserFormData = (data) => {
+    setFormState({ ...data });
+  }
 
   function isValidEmail(email) {
     return /\S+@\S+\.\S+/.test(email);
@@ -84,16 +101,28 @@ const CreateUser = () => {
 
   // All your function goes here...
   const createUser = () => {
-
-    console.log("validateForm()", validateForm())
     if (validateForm()) {
-      axios.post('http://localhost:8000/user', formState)
-        .then((response) => {
-          let newState = { ...initialState };
-          newState.hobbies = [];
-          setFormState(newState);
-        })
-        .catch((error) => console.log(error))
+
+      if (editUser) {
+        axios.put(`http://localhost:8000/user/${params?.id}`, formState)
+          .then((response) => {
+            let newState = { ...initialState };
+            newState.hobbies = [];
+            setFormState(newState);
+            navigate('/');
+          })
+          .catch((error) => console.log(error))
+      } else {
+        axios.post('http://localhost:8000/user', formState)
+          .then((response) => {
+            let newState = { ...initialState };
+            newState.hobbies = [];
+            setFormState(newState);
+          })
+          .catch((error) => console.log(error))
+      }
+
+
     }
   }
 
@@ -184,7 +213,7 @@ const CreateUser = () => {
 
   return (
     <div>
-      <h3>Create Users</h3>
+      <h3>{!editUser ? 'Create' : 'Update'} Users</h3>
       <div className="form-group row my-2">
         <label className="col-sm-2 col-form-label">First Name *</label>
         <div className="col-sm-10">
@@ -291,7 +320,7 @@ const CreateUser = () => {
       <div className="form-group row my-2">
         <div className="col-sm-10">
           <div>
-            <button type="submit" className="btn btn-primary" onClick={() => createUser()}>Create User</button>
+            <button type="submit" className="btn btn-primary" onClick={() => createUser()}>{!editUser ? 'Create' : 'Update'} User</button>
           </div>
           <div>
             <small>Please enter mandatory values (*)</small>

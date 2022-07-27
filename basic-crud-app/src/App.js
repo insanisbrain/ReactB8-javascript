@@ -34,6 +34,7 @@ function App() {
         <Routes>
           <Route path="/" element={<UserList />} />
           <Route path="/createuser" element={<CreateUser />} />
+          <Route path="/updateuser/:id" element={<CreateUser />} />
         </Routes>
         {/* <div className="row">
           <div className="col-12">

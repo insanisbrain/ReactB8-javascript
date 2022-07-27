@@ -2,11 +2,13 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUsers } from '../Redux/User/userSlice';
+import { useNavigate } from 'react-router-dom';
 
 
 const UserList = () => {
 
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
   const userData = useSelector(state => state.users.data)
@@ -30,6 +32,10 @@ const UserList = () => {
     if (response) {
       loadUserData();
     }
+  }
+
+  const userEdit = (data) => {
+    navigate(`/updateuser/${data.id}`);
   }
 
   return (
@@ -65,7 +71,7 @@ const UserList = () => {
                   <td>{user.designation}</td>
                   <td>{user.hobbies.toString()}</td>
                   <td width="170">
-                    <button type="button" className="btn btn-primary me-2">Edit</button>
+                    <button type="button" className="btn btn-primary me-2" onClick={() => userEdit(user)}>Edit</button>
                     <button type="button" className="btn btn-danger" onClick={() => userDelete(user)}>Delete</button>
                   </td>
                 </tr>
