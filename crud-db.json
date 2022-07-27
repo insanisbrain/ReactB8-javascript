@@ -16,73 +16,81 @@
     {
       "firstName": "Ankit",
       "lastName": "Varia",
-      "age": "20",
+      "age": "30",
       "education": "Master",
-      "designation": "CEO",
-      "email": "ankit@gmai.com",
-      "password": "Ankit@1234",
+      "designation": "Software Developer",
+      "email": "ankit@gmail.com",
+      "password": "Ankit@123",
       "mobile": "8780105205",
       "gender": "male",
-      "hobbies": [],
+      "hobbies": [
+        "movies",
+        "gaming"
+      ],
       "id": 2
     },
     {
       "firstName": "Ankit",
       "lastName": "Varia",
-      "age": "20",
+      "age": "27",
       "education": "Master",
-      "designation": "CEO",
-      "email": "ankit@gmai.com",
+      "designation": "Software Developer",
+      "email": "ankit@gmail.com",
       "password": "Ankit@1234",
       "mobile": "8780105205",
       "gender": "male",
       "hobbies": [
-        "coding"
+        "movies",
+        "coding",
+        "travelling"
       ],
       "id": 3
     },
     {
       "firstName": "Ankit",
       "lastName": "Varia",
-      "age": "20",
-      "education": "Master",
-      "designation": "CEO",
-      "email": "ankit@gmai.com",
-      "password": "Ankit@1234",
+      "age": "27",
+      "education": "Educ",
+      "designation": "QA Engineer",
+      "email": "ankit@gmail.com",
+      "password": "Ankit@123",
       "mobile": "8780105205",
       "gender": "male",
       "hobbies": [
-        "movies"
+        "coding",
+        "gaming"
       ],
       "id": 4
     },
     {
       "firstName": "Ankit",
       "lastName": "Varia",
-      "age": "20",
-      "education": "Master",
-      "designation": "CEO",
-      "email": "ankit@gmai.com",
+      "age": "23",
+      "education": "Ed",
+      "designation": "Software Developer",
+      "email": "ankit@gmail.com",
       "password": "Ankit@1234",
       "mobile": "8780105205",
       "gender": "male",
       "hobbies": [
+        "movies",
         "gaming"
       ],
       "id": 5
     },
     {
-      "firstName": "asd",
-      "lastName": "asd",
-      "age": "34",
-      "education": "asd",
-      "designation": "Software Developer",
-      "email": "as@as.c",
-      "password": "Ankit@1234",
+      "firstName": "Ankit",
+      "lastName": "Varia",
+      "age": "23",
+      "education": "Ed",
+      "designation": "Manager",
+      "email": "ankit@gmail.com",
+      "password": "Ankit@123",
       "mobile": "8780105205",
-      "gender": "female",
+      "gender": "male",
       "hobbies": [
-        "gaming",
+        "movies",
+        "travelling",
         "coding"
       ],
       "id": 6

@@ -89,7 +89,9 @@ const CreateUser = () => {
     if (validateForm()) {
       axios.post('http://localhost:8000/user', formState)
         .then((response) => {
-          setFormState(initialState);
+          let newState = { ...initialState };
+          newState.hobbies = [];
+          setFormState(newState);
         })
         .catch((error) => console.log(error))
     }
@@ -261,25 +263,25 @@ const CreateUser = () => {
         <div className="col-sm-2">Hobbies * (atlease one)</div>
         <div className="col-sm-10">
           <div className="form-check">
-            <input className="form-check-input" type="checkbox" value="movies" onChange={(event) => formValueChange(event, "MOVIES")} />
+            <input className="form-check-input" type="checkbox" value="movies" checked={formState.hobbies.includes('movies')} onChange={(event) => formValueChange(event, "MOVIES")} />
             <label className="form-check-label" >
               Movies
             </label>
           </div>
           <div className="form-check">
-            <input className="form-check-input" type="checkbox" value="gaming" onChange={(event) => formValueChange(event, "GAMING")} />
+            <input className="form-check-input" type="checkbox" value="gaming" checked={formState.hobbies.includes('gaming')} onChange={(event) => formValueChange(event, "GAMING")} />
             <label className="form-check-label" >
               Gaming
             </label>
           </div>
           <div className="form-check">
-            <input className="form-check-input" type="checkbox" value="coding" onChange={(event) => formValueChange(event, "CODING")} />
+            <input className="form-check-input" type="checkbox" value="coding" checked={formState.hobbies.includes('coding')} onChange={(event) => formValueChange(event, "CODING")} />
             <label className="form-check-label" >
               Coding
             </label>
           </div>
           <div className="form-check">
-            <input className="form-check-input" type="checkbox" value="travelling" onChange={(event) => formValueChange(event, "TRAVELLING")} />
+            <input className="form-check-input" type="checkbox" value="travelling" checked={formState.hobbies.includes('travelling')} onChange={(event) => formValueChange(event, "TRAVELLING")} />
             <label className="form-check-label" >
               Travelling
             </label>
