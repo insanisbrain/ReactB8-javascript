@@ -7,6 +7,79 @@ import { useNavigate } from 'react-router-dom';
 
 const UserList = () => {
 
+  const fakeData = [
+    {
+      name: 'ankit varia',
+      age: '27',
+      salary: '1000000000',
+      Education: [
+        {
+          name: '10th',
+          board: 'XYZ Board',
+          state: [
+            {
+              name: 'Gujarat',
+              city: 'vadodara'
+            },
+            {
+              name: 'Maharashtra',
+              city: 'Pune'
+            }
+          ]
+        },
+        {
+          name: '12th',
+          board: 'ABC Board',
+          state: [
+            {
+              name: 'Delhi',
+              city: 'Delhi'
+            },
+            {
+              name: 'Rajasthan',
+              city: 'Ajmer'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      name: 'Gorakh Kharat',
+      age: '30',
+      salary: '2000000000',
+      Education: [
+        {
+          name: '10th',
+          board: 'Nirma Board',
+          state: [
+            {
+              name: 'Gujarat',
+              city: 'Ahemdabad'
+            },
+            {
+              name: 'Maharashtra',
+              city: 'Nashik'
+            }
+          ]
+        },
+        {
+          name: '12th',
+          board: 'FGH Board',
+          state: [
+            {
+              name: 'Madhya Pradesh',
+              city: 'Indore'
+            },
+            {
+              name: 'Tamil Nadu',
+              city: '12345667'
+            }
+          ]
+        }
+      ]
+    }
+  ]
+
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
@@ -85,6 +158,51 @@ const UserList = () => {
           }
         </tbody>
       </table>
+      <h3>Nested For Loops</h3>
+      {
+        fakeData.map((level1) => {
+          return (
+            <div className="mt-5">
+              <div className="row border">
+                Name = {level1.name}
+              </div>
+              <div className="row border">
+                Age = {level1.age}
+              </div>
+              <div className="row border">
+                Salary = {level1.salary}
+              </div>
+              <div className="row border">
+                {
+                  level1.Education.map((level2) => {
+                    return (
+                      <>
+                        <div className="row">
+                          Education Name = {level2.name} studied at {level2.board}
+                        </div>
+                        <div className="row">
+                          {
+                            level2.state.map((level3) => {
+                              return (
+                                <>
+                                  <div className="row">
+                                    State name = {level3.name} & city is {level3.city}
+                                  </div>
+                                </>
+                              )
+                            })
+                          }
+                        </div>
+                      </>
+                    )
+                  })
+                }
+              </div>
+            </div>
+          )
+
+        })
+      }
     </div>
   )
 }
