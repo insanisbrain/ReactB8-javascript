@@ -211,9 +211,19 @@ const CreateUser = () => {
     setFormState({ ...newState });
   }
 
+  const getLocalStorageData = () => {
+    let data = localStorage.getItem("email");
+    return data;
+  }
+
+  const removeLocalStorageData = () => {
+    localStorage.removeItem("email");
+  }
+
   return (
     <div>
-      <h3>{!editUser ? 'Create' : 'Update'} Users</h3>
+      <h3>{!editUser ? 'Create' : 'Update'} Users = {getLocalStorageData()}</h3>
+      <button onClick={() => removeLocalStorageData()}>Remove Email Local Storage</button>
       <div className="form-group row my-2">
         <label className="col-sm-2 col-form-label">First Name *</label>
         <div className="col-sm-10">

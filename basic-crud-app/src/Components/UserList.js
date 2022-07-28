@@ -38,9 +38,14 @@ const UserList = () => {
     navigate(`/updateuser/${data.id}`);
   }
 
+  const setLocalStoageData = () => {
+    localStorage.setItem("email", "ankit@gmail.com");
+  }
+
   return (
     <div>
       <h3>Users List</h3>
+      <button onClick={() => setLocalStoageData()}>Add Local Storage Data</button>
       <table className="table table-bordered">
         <thead>
           <tr>
