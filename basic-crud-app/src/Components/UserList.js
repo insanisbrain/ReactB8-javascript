@@ -7,78 +7,114 @@ import { useNavigate } from 'react-router-dom';
 
 const UserList = () => {
 
-  const fakeData = [
-    {
-      name: 'ankit varia',
-      age: '27',
-      salary: '1000000000',
-      Education: [
-        {
-          name: '10th',
-          board: 'XYZ Board',
-          state: [
-            {
-              name: 'Gujarat',
-              city: 'vadodara'
-            },
-            {
-              name: 'Maharashtra',
-              city: 'Pune'
-            }
-          ]
-        },
-        {
-          name: '12th',
-          board: 'ABC Board',
-          state: [
-            {
-              name: 'Delhi',
-              city: 'Delhi'
-            },
-            {
-              name: 'Rajasthan',
-              city: 'Ajmer'
-            }
-          ]
-        }
-      ]
-    },
-    {
-      name: 'Gorakh Kharat',
-      age: '30',
-      salary: '2000000000',
-      Education: [
-        {
-          name: '10th',
-          board: 'Nirma Board',
-          state: [
-            {
-              name: 'Gujarat',
-              city: 'Ahemdabad'
-            },
-            {
-              name: 'Maharashtra',
-              city: 'Nashik'
-            }
-          ]
-        },
-        {
-          name: '12th',
-          board: 'FGH Board',
-          state: [
-            {
-              name: 'Madhya Pradesh',
-              city: 'Indore'
-            },
-            {
-              name: 'Tamil Nadu',
-              city: '12345667'
-            }
-          ]
-        }
-      ]
-    }
-  ]
+  const fakeDataObj = {
+    name: 'ankit varia',
+    age: '27',
+    salary: '1000000000',
+    Education: [
+      {
+        name: '10th',
+        board: 'XYZ Board',
+        state: [
+          {
+            name: 'Gujarat',
+            city: 'vadodara'
+          },
+          {
+            name: 'Maharashtra',
+            city: 'Pune'
+          }
+        ]
+      },
+      {
+        name: '12th',
+        board: 'ABC Board',
+        state: [
+          {
+            name: 'Delhi',
+            city: 'Delhi'
+          },
+          {
+            name: 'Rajasthan',
+            city: 'Ajmer'
+          }
+        ]
+      }
+    ]
+  }
+
+  // const fakeData = [
+  //   {
+  //     name: 'ankit varia',
+  //     age: '27',
+  //     salary: '1000000000',
+  //     Education: [
+  //       {
+  //         name: '10th',
+  //         board: 'XYZ Board',
+  //         state: [
+  //           {
+  //             name: 'Gujarat',
+  //             city: 'vadodara'
+  //           },
+  //           {
+  //             name: 'Maharashtra',
+  //             city: 'Pune'
+  //           }
+  //         ]
+  //       },
+  //       {
+  //         name: '12th',
+  //         board: 'ABC Board',
+  //         state: [
+  //           {
+  //             name: 'Delhi',
+  //             city: 'Delhi'
+  //           },
+  //           {
+  //             name: 'Rajasthan',
+  //             city: 'Ajmer'
+  //           }
+  //         ]
+  //       }
+  //     ]
+  //   },
+  //   {
+  //     name: 'Gorakh Kharat',
+  //     age: '30',
+  //     salary: '2000000000',
+  //     Education: [
+  //       {
+  //         name: '10th',
+  //         board: 'Nirma Board',
+  //         state: [
+  //           {
+  //             name: 'Gujarat',
+  //             city: 'Ahemdabad'
+  //           },
+  //           {
+  //             name: 'Maharashtra',
+  //             city: 'Nashik'
+  //           }
+  //         ]
+  //       },
+  //       {
+  //         name: '12th',
+  //         board: 'FGH Board',
+  //         state: [
+  //           {
+  //             name: 'Madhya Pradesh',
+  //             city: 'Indore'
+  //           },
+  //           {
+  //             name: 'Tamil Nadu',
+  //             city: '12345667'
+  //           }
+  //         ]
+  //       }
+  //     ]
+  //   }
+  // ]
 
   const [data, setData] = useState([]);
   const navigate = useNavigate();
@@ -113,6 +149,18 @@ const UserList = () => {
 
   const setLocalStoageData = () => {
     localStorage.setItem("email", "ankit@gmail.com");
+  }
+
+  const destruct = () => {
+    let { name, age, salary } = fakeDataObj;
+
+    return (
+      <div>
+        <div>name: {name}</div>
+        <div>Age: {age}</div>
+        <div>Salary: {salary}</div>
+      </div>
+    )
   }
 
   return (
@@ -158,8 +206,12 @@ const UserList = () => {
           }
         </tbody>
       </table>
-      <h3>Nested For Loops</h3>
-      {
+      <h3>Object Destruct</h3> {destruct()}
+      {/* {fakeDataObj.name}
+      {fakeDataObj.age}
+      {fakeDataObj.salary} */}
+      {/* <h3>Nested For Loops</h3> */}
+      {/* {
         fakeData.map((level1) => {
           return (
             <div className="mt-5">
@@ -202,7 +254,7 @@ const UserList = () => {
           )
 
         })
-      }
+      } */}
     </div>
   )
 }
